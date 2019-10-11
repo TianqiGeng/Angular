@@ -1,0 +1,9 @@
+<p>
+  前景: <input [(ngModel)]="fg" />
+</p>
+<p>
+  背景: <input [(ngModel)]="bg" />
+</p>
+<div [ngStyle]="{'color': fg, 'background-color': bg,'padding': '5px'}">
+  Test
+</div>
