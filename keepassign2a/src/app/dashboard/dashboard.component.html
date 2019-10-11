@@ -1,0 +1,9 @@
+<!-- HeaderComponent to be displayed as part of AppComponent -->
+<app-header></app-header>
+<!-- Another component to be rendered based on route -->
+<app-note-taker></app-note-taker>
+<!-- Label to display any error messages -->
+
+<!-- Load and display the collection of notes from server as Material Cards with card title set to note title and card content set to note text  -->
+<router-outlet></router-outlet>
+<router-outlet name="noteEditOutlet"></router-outlet>

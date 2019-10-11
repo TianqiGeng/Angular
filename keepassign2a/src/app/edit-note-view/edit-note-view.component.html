@@ -1,0 +1,21 @@
+<div mat-dialog-content>
+  <p>Note</p>
+  <div><span>id: </span>{{note.id}}</div>
+  <div class="d-flex flex-row">
+    <label>name:
+      <input [(ngModel)]="note.title"  />
+    </label>
+    <label>text:
+      <input [(ngModel)]="note.text" placeholder="Text" /><br/>
+    </label>
+    <label>status:
+      <input [(ngModel)]="note.status" placeholder="Status" /><br/>
+    </label>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onSave()">Ok</button>
+  <button mat-button (click)="Delete(note.id)">Delete</button>
+</div>
+<label>{{this.errMessage}}</label>

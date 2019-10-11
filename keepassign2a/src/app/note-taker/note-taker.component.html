@@ -1,0 +1,28 @@
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Take a note
+            </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <form class="example-form">
+            <mat-form-field>
+                <input matInput placeholder="title" [(ngModel)]="note.title" name="title">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea matInput placeholder="text" [(ngModel)]="note.text" name="text"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea matInput placeholder="status" [(ngModel)]="note.status" name="status"></textarea>
+            </mat-form-field>
+            <mat-action-row>
+                <button mat-button color="primary" (click)="add()">Done</button>
+            </mat-action-row>
+        </form>
+    </mat-expansion-panel>
+
+</mat-accordion>
+<label class='error-message'>{{ errMessage }}</label>

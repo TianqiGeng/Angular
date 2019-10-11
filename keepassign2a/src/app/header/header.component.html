@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <!-- Keep -->
+    <!-- <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon> -->
+
+    <span>Keep</span>
+    <span class="example-spacer"></span>
+    <span class="nav-tool-items example-icon">
+        <i *ngIf="isNoteView" class="material-icons switchToListView" (click)="routeToListView()">view_list</i>
+        <i *ngIf="!isNoteView" class="material-icons switchToNoteView" (click)="routeToNoteView()">view_quilt</i>
+    </span>
+    
+    <span class="nav-tool-items">
+        <a mat-button routerLink="/logout" (click)="logOut()" routerLinkActive="active">
+            <mat-icon>exit_to_app</mat-icon>
+        </a>
+    </span>
+
+</mat-toolbar>
