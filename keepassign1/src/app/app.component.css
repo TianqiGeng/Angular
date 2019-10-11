@@ -1,0 +1,22 @@
+h1{
+  font-size: 2em;
+  align-content: center;
+}
+mat-form-field{
+  width:50%;
+  margin-top:10px;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.example-card {
+  width: 30%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

@@ -1,0 +1,38 @@
+<app-header>
+</app-header>
+<h1> Welcome to myangularassignment1!</h1>
+<div class="container mt-2">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                   Take a note
+                </mat-panel-title>
+              
+            </mat-expansion-panel-header>
+            <form class="example-form">
+                <mat-form-field>
+                    <input matInput placeholder="title" [(ngModel)]="note.title" name="title">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <textarea matInput placeholder="text" [(ngModel)]="note.text" name="text"></textarea>
+                </mat-form-field>
+                <mat-action-row>
+                    <button mat-button color="primary" (click)="add()">Done</button>
+                </mat-action-row>
+            </form>
+        </mat-expansion-panel>
+        
+    </mat-accordion>
+    <div class="d-flex  flex-nowrap" >
+        <mat-card class="example-card  bg-white text-dark mt-2" *ngFor="let note of notes">
+            <mat-card-content>
+                <li>{{note.id}}</li>
+                <mat-card-title>{{note.title}}</mat-card-title>
+                <li>{{note.text}}</li>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
