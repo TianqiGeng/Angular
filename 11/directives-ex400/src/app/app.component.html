@@ -1,0 +1,4 @@
+<div *ngFor="let animal of animals">
+    <div [ngClass]="{'selected': animal === selectedAnimal, 'unselected' : animal !== selectedAnimal}"
+    (click)="ClickedA($event)" >{{animal}}</div>
+</div>

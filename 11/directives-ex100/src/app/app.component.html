@@ -1,0 +1,8 @@
+变量showName的值：{{showName}}
+<div *ngIf="this.showName" class="box">
+    姓名: tian
+</div>
+<div *ngIf="!this.showName" class="box">
+    地址: 光谷
+</div>
+<button (click)="this.toggle()">Toggle</button>
