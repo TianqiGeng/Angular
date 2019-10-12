@@ -13,6 +13,7 @@ import { RouterService } from '../router.service';
 export class EditNoteViewComponent implements OnInit {
   note=new Note();
   errMessage: string;
+  status: Array<string> = ['not-started', 'started', 'finished'];
   constructor(
     public dialogRef: MatDialogRef<EditNoteViewComponent>,
     @Inject(MAT_DIALOG_DATA) public data: number,
@@ -41,6 +42,8 @@ export class EditNoteViewComponent implements OnInit {
     let editNote = new Note();
     editNote = this.note;
     editNote.id = this.data;
+    console.log("=====" + editNote.status+this.note.status);
+    editNote.status=this.note.status;
     console.log("=====" + editNote.id + editNote.title + editNote.status);
     this.notesService.editNote(editNote).subscribe(
       res => {

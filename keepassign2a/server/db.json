@@ -4,25 +4,28 @@
       "id": 2,
       "title": "Murphy Lan",
       "text": "Track the new submissions",
-      "status": "starteddddd"
+      "status": "finished",
+      "state": "started"
     },
     {
       "title": "LoopBack",
       "text": "Jack111",
       "id": 3,
-      "status": "finished"
+      "status": "started"
     },
     {
       "title": "修仙2",
       "text": "起点大作2",
-      "status": "finished",
-      "id": 4
+      "status": "not-started",
+      "id": 4,
+      "state": "started"
     },
     {
       "title": "我去问",
       "text": "你去回答",
-      "status": "yes",
-      "id": 5
+      "status": "started",
+      "id": 5,
+      "state": "started"
     }
   ],
   "users": [

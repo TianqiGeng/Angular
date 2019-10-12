@@ -16,7 +16,11 @@
             </mat-form-field>
             <br>
             <mat-form-field>
-                <textarea matInput placeholder="status" [(ngModel)]="note.status" name="status"></textarea>
+                <mat-select placeholder="status" [(ngModel)]="note.status" name="status">
+                    <mat-option value="not-started">not-started</mat-option>
+                    <mat-option value="started">started</mat-option>
+                    <mat-option value="completed">completed</mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-action-row>
                 <button mat-button color="primary" (click)="add()">Done</button>
