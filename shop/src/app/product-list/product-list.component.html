@@ -1,0 +1,16 @@
+<p>product-list works!</p>
+<h2>Should mankind colonize the Universe?</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+<div *ngFor="let product of products;index as productId">
+    <a [title]="product.name+' detail'" [routerLink]="['/products',productId]">
+        <h3>{{product.name}}</h3>
+    </a>
+    <p *ngIf="product.description">
+        Description: {{product.description}}
+    </p>
+    <button (click)="share()">Share</button><br /><br />
+    <app-product-alerts [productooo]="product" (notify)="notityshare()">
+    </app-product-alerts>
+    <app-product-like (note)="onVoted($event)"></app-product-like>
+
+</div>
