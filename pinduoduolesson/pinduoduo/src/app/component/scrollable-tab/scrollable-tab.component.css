@@ -21,11 +21,12 @@ a{
     color:green;
 }
 .indicator{
-   
-    height: 2px;
-    widows: 2rem;
-    margin-top:2px; 
+  height: 2px;
+  width: 2rem;
+  margin-top: 2px;
+ 
 }
+
 .even{
     font-weight: 900;
 }

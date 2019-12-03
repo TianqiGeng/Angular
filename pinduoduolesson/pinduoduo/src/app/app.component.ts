@@ -74,7 +74,7 @@ export class AppComponent {
   {
     title: '家具',
     link: ''
-  }
+  },
   ];
   handleTabSelected(topMenu: TopMenu) {
     console.log(topMenu);
