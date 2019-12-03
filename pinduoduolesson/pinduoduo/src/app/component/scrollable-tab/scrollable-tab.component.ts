@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 export interface TopMenu {
   title: String;
   readonly link: String;
@@ -11,6 +12,11 @@ export interface TopMenu {
 })
 export class ScrollableTabComponent implements OnInit {
   @Input() menus;
+  @Input() backgroundColor = '#fff';
+  @Input() titleActiveColor = 'yellow';
+  @Input() titleColor = 'blue';
+  @Input() indicatorColor = 'brown';
+  @Output() tabSelected = new EventEmitter;
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +25,7 @@ export class ScrollableTabComponent implements OnInit {
 
   handleSelection(index: number) {
     this.selectedIndex = index;
+    this.tabSelected.emit(this.menus[this.selectedIndex]);
   }
 
 }

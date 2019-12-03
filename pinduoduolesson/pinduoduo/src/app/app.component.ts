@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-interface TopMenu {
-  title: String;
-  readonly link: String;
-
-}
+import { TopMenu } from './component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '拼多多';
-  selectedIndex = -1;
-  menus: TopMenu[] = [{
+  title = 'pindd';
+  topMenus: TopMenu[] = [{
     title: '热门',
     link: ''
   },
@@ -81,8 +76,7 @@ export class AppComponent {
     link: ''
   }
   ];
-  handleSelection(index: number) {
-    this.selectedIndex = index;
+  handleTabSelected(topMenu: TopMenu) {
+    console.log(topMenu);
   }
-
 }

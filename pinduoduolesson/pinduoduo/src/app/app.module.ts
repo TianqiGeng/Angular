@@ -2,13 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ScrollableTabComponent } from './component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScrollableTabComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
