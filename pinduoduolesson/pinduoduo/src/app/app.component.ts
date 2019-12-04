@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { TopMenu } from './component';
+import { Component, ViewChild } from '@angular/core';
+import { TopMenu, ImageSlider, ImageSliderComponent } from './component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild(ImageSliderComponent, { static: true }) imageSlider: ImageSliderComponent;
   title = 'pindd';
   topMenus: TopMenu[] = [{
     title: '热门',
@@ -76,7 +77,40 @@ export class AppComponent {
     link: ''
   },
   ];
+  imageSliders: ImageSlider[] = [
+    {
+      imgUrl: 'https://picsum.photos/1200/500?random&t=${Math.random()-1}',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl: 'https://picsum.photos/1200/500?random&t=${Math.random()+2}',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl: 'https://picsum.photos/1200/500?random&t=${Math.random()+3}',
+      link: '',
+      caption: ''
+    },
+    {
+      imgUrl: 'https://picsum.photos/1200/500?random&t=${Math.random()+4}',
+      link: '',
+      caption: ''
+    },
+  ];
+
   handleTabSelected(topMenu: TopMenu) {
     console.log(topMenu);
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit", this.imageSlider);
+
+
   }
 }
