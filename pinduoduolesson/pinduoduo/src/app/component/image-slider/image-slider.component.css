@@ -3,10 +3,21 @@
     overflow:hidden;
 }
 /* overflow: scroll;内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容 */
+/* scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch; 滑动效果*/
+/*  scroll-snap-type:x mandatory;弹性滚动，防止图片停中间 */
 .container .image-slider{
-    border:1px solid blue;
     display:flex;
     overflow: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type:x mandatory;
+}
+.container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    scroll-snap-align: start;
 }
 
 .nav-section{
@@ -29,4 +40,8 @@
     border-radius: 50%;
     margin:5px;
 
+}
+.nav-section .slide-button-select{
+    background-color: red;
+    
 }
