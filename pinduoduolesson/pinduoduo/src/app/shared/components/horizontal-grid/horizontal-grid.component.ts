@@ -61,6 +61,18 @@ export class HorizontalGridComponent implements OnInit {
       icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
       link: 'appliance'
     },
+    {
+      id: 9,
+      title: '充值中心',
+      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
+      link: 'money'
+    },
+    {
+      id: 8,
+      title: '每日好店',
+      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
+      link: 'store'
+    },
   ];
   constructor() { }
 
