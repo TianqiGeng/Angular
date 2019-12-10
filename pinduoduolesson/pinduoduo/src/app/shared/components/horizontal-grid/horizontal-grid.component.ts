@@ -12,71 +12,28 @@ export interface Channel {
 })
 export class HorizontalGridComponent implements OnInit {
   username = '';
-  @Input() channels: Channel[] = [
-    {
-      id: 1,
-      title: '限时秒杀',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'hot'
-    },
-    {
-      id: 2,
-      title: '断码清仓',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'men'
-    },
-    {
-      id: 3,
-      title: '品牌馆',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'sports'
-    },
-    {
-      id: 4,
-      title: '多多果园',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'department'
-    },
-    {
-      id: 5,
-      title: '9块9特卖',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'food'
-    },
-    {
-      id: 6,
-      title: '助力享免单',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'textile'
-    },
-    {
-      id: 7,
-      title: '天天领现金',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'mobile'
-    },
-    {
-      id: 8,
-      title: '1分抽大奖',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'appliance'
-    },
-    {
-      id: 9,
-      title: '充值中心',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'money'
-    },
-    {
-      id: 8,
-      title: '每日好店',
-      icon: 'https://picsum.photos/1200/500?random&t=${Math.random()}',
-      link: 'store'
-    },
-  ];
+  @Input() cols = 9;
+  @Input() displayCols = 5;
+  @Input() channels: Channel[];
+  sliderMargin = '0';
   constructor() { }
 
   ngOnInit() {
+  }
+  public get scrollable(): boolean {
+    return this.cols > this.displayCols;
+  }
+  public get templateRows(): string {
+    return `minmax(auto, max-content)`;
+  }
+
+  public get templateColumns(): string {
+    return `repeat(${this.cols}, calc((100vw - ${this.displayCols *
+      0.4}rem) / ${this.displayCols}))`;
+  }
+  public handleScroll(ev) {
+    this.sliderMargin = `0 ${(100 * ev.target.scrollLeft) /
+      ev.target.scrollWidth}%`;
   }
 
 }

@@ -1,0 +1,16 @@
+<div *ngIf="selectedTabLink=='hot' else other">
+  <app-image-slider [sliders]="imageSliders"></app-image-slider>
+  <app-horizontal-grid>
+    <div appGridItem *ngFor="let item of channels">
+      <img [src]="item.icon" alt="" appGridItemImage="4rem" fitMode="none" />
+      <span appGridItemTitle="1rem">
+        {{item.title}}
+      </span>
+    </div>
+  </app-horizontal-grid>
+</div>
+<ng-template #other>
+  other works
+</ng-template>
+<a [routerLink]="['grand']" [queryParams]="{name:'zhangsan',gender:'male'}">Link to Grand</a>
+<router-outlet></router-outlet>

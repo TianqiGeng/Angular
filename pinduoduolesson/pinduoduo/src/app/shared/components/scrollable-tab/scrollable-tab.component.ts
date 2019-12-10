@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 export interface TopMenu {
+  id: number;
   title: String;
   readonly link: String;
 
